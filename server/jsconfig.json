@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "sourceMap": true,
+    "skipLibCheck": true
+  },
+  "lib": ["es2020"]
+}
+
