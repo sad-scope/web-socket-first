@@ -1,0 +1,57 @@
+@import "./src/theme.module";
+
+.item {
+  border: 1px solid color(grey-200);
+  border-radius: 5px;
+  width: 50%;
+  display: flex;
+  color: color(grey-650);
+  background-color: color(blue-50, 0.1);
+
+  &__my-message {
+    align-self: flex-end;
+    background-color: color(dark-green-100, 0.1);
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  border-bottom: 1px solid color(grey-200);
+  border-radius: 5px;
+  width: 100%;
+  padding: 3px 0;
+  font-family: $secondaryFont;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trash {
+  margin-right: 5px;
+}
+
+.user-name {
+  margin-left: 10px;
+}
+
+.content {
+  display: flex;
+  font-family: $primaryFont;
+  padding: 5px;
+}
+
+.message {
+  width: 75%;
+}
+
+.time {
+  display: flex;
+  font-family: $secondaryFont;
+  font-size: 11px;
+  align-items: flex-end;
+  justify-items: end;
+  width: 25%;
+}

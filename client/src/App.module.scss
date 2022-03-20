@@ -1,0 +1,12 @@
+@import "theme.module";
+
+:root,
+html[data-theme="default"] {
+  @include getTheme($-theme-default);
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+}

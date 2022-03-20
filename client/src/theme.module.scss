@@ -1,0 +1,167 @@
+$primaryFont: "Roboto", sans-serif;
+$secondaryFont: "Montserrat", sans-serif;
+
+$-theme-default: (
+  dark-blue-400: #000052,
+  dark-blue-350: #4c4ca8,
+  dark-blue-300: #5454ae,
+  dark-blue-250: #7272d3,
+  dark-blue-200: #8686ff,
+  dark-blue-150: #9999ff,
+  dark-blue-100: #c2c2ff,
+  dark-blue-50: #f5f5ff,
+
+  blue-350: #3a3ab7,
+  blue-300: #0e5eba,
+  blue-250: #4848f1,
+  blue-200: #4747ff,
+  blue-150: #6464ff,
+  blue-100: #4990e1,
+  blue-50: #568bf2,
+
+  light-blue-200: #7b82c7,
+  light-blue-150: #bcc7e9,
+  light-blue-100: #c9dcf2,
+  light-blue-50: #f3f2fa,
+
+  blue-green-200: #3d8da5,
+  blue-green-150: #58b2cd,
+  blue-green-100: #80d4ed,
+  blue-green-50: #9bcfdb,
+
+  magenta-250: #720c49,
+  magenta-200: #a43778,
+  magenta-150: #b2508b,
+  magenta-100: #bd3597,
+  magenta-50: #dd67ae,
+
+  dark-green-250: #4a978e,
+  dark-green-200: #72b3ab,
+  dark-green-150: #35bdad,
+  dark-green-100: #78d5c9,
+  dark-green-50: #a0d6cf,
+
+  green-200: #68d387,
+  green-150: #1bda9d,
+  green-100: #2ee5ac,
+  green-50: #c9f8e9,
+
+  purple-200: #7654ae,
+  purple-150: #944b9a,
+  purple-100: #b87bc7,
+  purple-50: #db9deb,
+
+  dark-red-400: #7c2434,
+  dark-red-350: #933f52,
+  dark-red-300: #ae5464,
+  dark-red-250: #ac3147,
+  dark-red-200: #be2a45,
+  dark-red-150: #d75371,
+  dark-red-100: #ea7a93,
+  dark-red-50: #ffcad6,
+
+  red-200: #de5555,
+  red-150: #fe4848,
+  red-100: #ff6161,
+  red-50: #ff9988,
+
+  orange-100: #f26d56,
+  orange-50: #ff8346,
+
+  yellow-50: #ffa722,
+
+  brown-200: #c58378,
+  brown-150: #e1a095,
+  brown-100: #d9bab5,
+  brown-50: #f2cbc4,
+
+  grey-650: #222222,
+  grey-600: #333333,
+  grey-550: #474747,
+  grey-500: #5c5c5c,
+  grey-450: #7d7d7d,
+  grey-400: #999999,
+  grey-350: #adadad,
+  grey-300: #c4c4c4,
+  grey-250: #cecdc8,
+  grey-200: #d1d1d1,
+  grey-150: #d6d6d6,
+  grey-100: #ebebeb,
+  grey-50: #fafafa,
+
+  black-0: #000000,
+  white-0: #ffffff,
+);
+
+@function color($name, $opacity: null) {
+  @if ($opacity != null) {
+    @if (type-of($opacity) != "number") {
+      @error 'The "opacity" color must be number!';
+    }
+
+    @return unquote("rgba(var(--#{$name}), #{$opacity})");
+  }
+
+  @return unquote("rgb(var(--#{$name}))");
+}
+
+// @public api
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+// @public api
+@mixin getTheme($colors) {
+  @each $name, $color in $colors {
+    --#{$name}: #{hexToRGB($color)};
+  }
+}
+
+// @public api
+$color-map-sites: (
+  0: color(dark-blue-100),
+  1: color(blue-150),
+  2: color(magenta-200),
+  3: color(dark-red-100),
+  4: color(blue-green-150),
+  5: color(brown-50),
+  6: color(magenta-50),
+  7: color(blue-100),
+  8: color(dark-green-50),
+  9: color(dark-blue-200),
+  10: color(light-blue-100),
+  11: color(dark-blue-300),
+  12: color(purple-50),
+  13: color(brown-150),
+  14: color(red-50),
+  15: color(blue-green-100),
+  16: color(dark-red-150),
+  17: color(dark-red-50),
+  18: color(dark-red-250),
+  19: color(blue-300),
+  20: color(dark-red-300),
+  21: color(purple-200),
+  22: color(dark-green-200),
+  23: color(blue-green-50),
+  24: color(brown-100),
+  25: color(dark-green-250),
+  26: color(dark-green-100),
+  27: color(dark-red-200),
+  28: color(dark-red-400),
+  29: color(magenta-250),
+  30: color(blue-350),
+  31: color(blue-250),
+  32: color(magenta-150),
+  33: color(dark-red-350),
+  34: color(blue-green-200),
+  35: color(grey-250),
+  36: color(grey-650),
+  37: color(purple-100),
+  38: color(dark-green-150),
+  39: color(orange-100),
+  40: color(brown-200),
+  41: color(purple-150),
+  42: color(light-blue-200),
+  43: color(magenta-100),
+  44: color(blue-50),
+);
